@@ -1,0 +1,594 @@
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Pradeep<span> Vanahalli</span></div>
+  <button class="hamburger" [class.open]="menuOpen" (click)="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul [class.open]="menuOpen">
+    <li>
+      <button class="theme-toggle" [class.is-light]="!isDarkTheme" (click)="toggleTheme()" [title]="isDarkTheme ? 'Switch to light mode' : 'Switch to dark mode'">
+        <span class="toggle-thumb">{{ isDarkTheme ? '🌙' : '☀️' }}</span>
+      </button>
+    </li>
+    <li><a href="#hero" (click)="closeMenu()">Home</a></li>
+    <li><a href="#about" (click)="closeMenu()">About</a></li>
+    <li><a href="#experience" (click)="closeMenu()">Experience</a></li>
+    <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
+    <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
+    <li><a href="#contact" class="nav-cta" (click)="closeMenu()">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-layout">
+    <div class="hero-content">
+      <h1>Full Stack <span class="highlight">.NET</span><br/>Developer</h1>
+      <p class="hero-desc">
+        Building scalable backend systems with <strong>ASP.NET Core</strong> and crafting dynamic web applications using <strong>Angular</strong>. Based in India — open to remote opportunities and international roles in Canada, Germany, UAE, Europe, and beyond.
+      </p>
+      <div class="hero-btns">
+        <a href="https://drive.google.com/file/d/1sTfNBOg_QvpcFuKNTVLDec4v6_l622d9/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-primary">Download Resume →</a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="profile_bug.jpeg" alt="Pradeep Vanahalli" class="hero-profile-img" />
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid about-grid-single">
+    <div class="about-text">
+      <div class="section-tag">About Me</div>
+      <h2>Senior Software Engineer<br/>in BFSI domains</h2>
+      <p>I'm a <strong>Senior Software Engineer</strong> with <strong>3.5+ years of experience</strong> building high-performance, scalable enterprise applications across <strong>Banking, Financial Trading, and Insurance</strong> domains.</p>
+      <p>My work has driven measurable impact — a <strong>65–70% reduction in API latency</strong>, supporting <strong>10× growth</strong> on a brokerage platform, and consistent ahead-of-schedule delivery within large Agile teams of 40+ members.</p>
+      <p>Core expertise in <strong>.NET Core, Web API, and Microservices</strong> with <strong>SQL Server</strong>, complemented by full-stack delivery using <strong>Angular</strong>. I champion Clean Architecture, SOLID principles, and raise the bar through code reviews and developer mentoring.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="exp-header">
+    <div class="section-tag">Work Experience</div>
+    <h2 class="exp-title">Career Journey</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-line"></div>
+
+    <!-- SIA Partners — RIGHT -->
+    <div class="timeline-item timeline-right">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card" (click)="toggleExp(0)">
+        <div class="timeline-header">
+          <div class="timeline-meta">
+            <div class="timeline-role">Senior Software Engineer</div>
+            <div class="timeline-company">SIA Partners</div>
+            <div class="timeline-period">Nov 2025 – Present</div>
+          </div>
+          <button class="timeline-toggle" [class.open]="expOpen[0]">▾</button>
+        </div>
+        <div class="timeline-body" [class.open]="expOpen[0]">
+          <ul>
+            <li>Developed and maintained scalable <strong>REST APIs</strong> for insurance claims processing using <strong>.NET Core</strong> and <strong>SQL Server</strong>, achieving <strong>20–30% performance improvement</strong> through targeted code refactoring and strategic <strong>Redis caching</strong>.</li>
+            <li>Enhanced <strong>RabbitMQ</strong>-based messaging infrastructure to support reliable high-volume asynchronous operations, ensuring fault-tolerant data flow across distributed services with zero message loss.</li>
+            <li>Designed and delivered <strong>2–3 microservices</strong> for new product features with a focus on scalability, loose coupling, and minimal future modifications — reducing long-term technical debt significantly.</li>
+            <li>Led backend initiatives within a cross-functional <strong>Agile team</strong> of 3–5 members — driving code reviews, developer mentoring, API design standards using <strong>Swagger/OpenAPI</strong>, and contributing <strong>Angular</strong> development for full-stack delivery.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Motilal Oswal — LEFT -->
+    <div class="timeline-item timeline-left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card" (click)="toggleExp(1)">
+        <div class="timeline-header">
+          <div class="timeline-meta">
+            <div class="timeline-role">Senior Executive Software Developer</div>
+            <div class="timeline-company">Motilal Oswal Financial Services Ltd.</div>
+            <div class="timeline-period">Feb 2023 – Oct 2025</div>
+          </div>
+          <button class="timeline-toggle" [class.open]="expOpen[1]">▾</button>
+        </div>
+        <div class="timeline-body" [class.open]="expOpen[1]">
+          <ul>
+            <li>Spearheaded development of an <strong>Intraday Options Trading</strong> feature driving <strong>10× brokerage volume growth</strong>, building scalable <strong>.NET Core microservices</strong> handling hundreds of thousands of real-time requests during peak trading hours.</li>
+            <li>Optimised critical trading APIs achieving <strong>65–70% latency reduction</strong> through <strong>Redis caching</strong> and backend logic optimisation, directly improving platform responsiveness in a high-stakes financial environment.</li>
+            <li>Developed <strong>60+ REST APIs</strong> and <strong>15+ reusable NuGet packages</strong> across 4–6 microservices covering order management, portfolio analytics, caching, runtime configuration, and SMS/email services.</li>
+            <li>Managed and maintained <strong>20+ SQL Server Agent Jobs</strong> for automated data synchronisation and background processing, ensuring data integrity and zero downtime for mission-critical operations.</li>
+            <li>Accelerated team development velocity by <strong>45%</strong> through AI-assisted tools (<strong>Amazon Q Developer</strong>, <strong>GitHub Copilot</strong>, and custom <strong>MCP servers</strong>), significantly reducing development cycle time and improving code quality.</li>
+            <li>Collaborated with a cross-functional team of <strong>40+ members</strong> (business, frontend, QA, DevOps, product) — resolving critical production issues <strong>50% faster</strong> through comprehensive documentation and streamlined processes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- LTI — RIGHT -->
+    <div class="timeline-item timeline-right">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card" (click)="toggleExp(2)">
+        <div class="timeline-header">
+          <div class="timeline-meta">
+            <div class="timeline-role">Software Engineer</div>
+            <div class="timeline-company">Larsen &amp; Toubro Infotech (LTI)</div>
+            <div class="timeline-period">Jun 2022 – Jan 2023</div>
+          </div>
+          <button class="timeline-toggle" [class.open]="expOpen[2]">▾</button>
+        </div>
+        <div class="timeline-body" [class.open]="expOpen[2]">
+          <ul>
+            <li>Provided backend support for <strong>Citi Bank</strong> applications, ensuring system stability and performance — created and tracked tickets using <strong>ServiceNow</strong> for <strong>ITSM</strong> activities.</li>
+            <li>Resolved <strong>100+ tickets per month</strong> via ServiceNow, prioritising by severity and ensuring timely resolution within <strong>SLAs</strong>.</li>
+            <li>Collaborated with cross-functional teams to plan and execute release and upgrade activities, ensuring zero service disruption.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-header">
+    <div class="section-tag">Tech Stack</div>
+    <h2>Skills & Technologies</h2>
+  </div>
+
+  <div class="skills-toggle-wrapper">
+    <button class="skills-toggle-btn" (click)="toggleSkillsView()">
+      {{ isOrbitMode ? 'Sort →' : 'Orbit ↺' }}
+    </button>
+  </div>
+
+  <!-- ═══ ORBIT VIEW ═══ -->
+  @if (isOrbitMode) {
+  <div class="orbit-scene">
+
+    <!-- Orbit track rings (visual guides) -->
+    <div class="orbit-track orbit-track-1"></div>
+    <div class="orbit-track orbit-track-2"></div>
+    <div class="orbit-track orbit-track-3"></div>
+    <div class="orbit-center-dot"></div>
+
+    <!-- Ring 1 · inner · CW · 32s · Languages + Core Backend (8 icons) -->
+    <div class="orbit-ring orbit-ring-1">
+      <div class="orbit-icon" style="--angle:0deg; --radius:105px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#"/></div>
+          <span class="orbit-label">C#</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:45deg; --radius:105px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"/></div>
+          <span class="orbit-label">TypeScript</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:90deg; --radius:105px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"/></div>
+          <span class="orbit-label">JavaScript</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:135deg; --radius:105px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt=".NET Core"/></div>
+          <span class="orbit-label">.NET Core</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:180deg; --radius:105px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/dotnet/512bd4" alt="ASP.NET"/></div>
+          <span class="orbit-label">ASP.NET</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:225deg; --radius:105px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/dotnet/9061f9" alt="EF Core"/></div>
+          <span class="orbit-label">EF Core</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:270deg; --radius:105px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/nuget/004880" alt="Dapper"/></div>
+          <span class="orbit-label">Dapper</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:315deg; --radius:105px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg" alt="RabbitMQ"/></div>
+          <span class="orbit-label">RabbitMQ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ring 2 · middle · CCW · 22s · Frontend + Databases (10 icons) -->
+    <div class="orbit-ring orbit-ring-2">
+      <div class="orbit-icon" style="--angle:0deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular"/></div>
+          <span class="orbit-label">Angular</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:36deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"/></div>
+          <span class="orbit-label">HTML5</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:72deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"/></div>
+          <span class="orbit-label">CSS3</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:108deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"/></div>
+          <span class="orbit-label">Bootstrap</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:144deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" class="img-invert"/></div>
+          <span class="orbit-label">SQL Server</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:180deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"/></div>
+          <span class="orbit-label">PostgreSQL</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:216deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"/></div>
+          <span class="orbit-label">MySQL</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:252deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis"/></div>
+          <span class="orbit-label">Redis</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:288deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio"/></div>
+          <span class="orbit-label">Visual Studio</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:324deg; --radius:190px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code"/></div>
+          <span class="orbit-label">VS Code</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ring 3 · outer · CW · 15s · Tools + AI (9 icons) -->
+    <div class="orbit-ring orbit-ring-3">
+      <div class="orbit-icon" style="--angle:0deg; --radius:275px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"/></div>
+          <span class="orbit-label">Git</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:40deg; --radius:275px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="img-invert"/></div>
+          <span class="orbit-label">GitHub</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:80deg; --radius:275px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"/></div>
+          <span class="orbit-label">Azure</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:120deg; --radius:275px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman"/></div>
+          <span class="orbit-label">Postman</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:160deg; --radius:275px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" alt="Swagger"/></div>
+          <span class="orbit-label">Swagger</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:200deg; --radius:275px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="Jira"/></div>
+          <span class="orbit-label">Jira</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:240deg; --radius:275px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/githubcopilot/ffffff" alt="GitHub Copilot" class="copilot-icon"/></div>
+          <span class="orbit-label">Copilot</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:280deg; --radius:275px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/claude/d97757" alt="Claude"/></div>
+          <span class="orbit-label">Claude</span>
+        </div>
+      </div>
+      <div class="orbit-icon" style="--angle:320deg; --radius:275px">
+        <div class="orbit-icon-content">
+          <div class="tech-circle"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+            <defs><linearGradient id="aqg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#5B8EF5"/><stop offset="100%" style="stop-color:#9030F0"/></linearGradient></defs>
+            <path d="M43.06,9 A8,8,0,0,1,56.94,9 L82.06,23.5 A8,8,0,0,1,89,35.5 L89,64.5 A8,8,0,0,1,82.06,76.5 L56.94,91 A8,8,0,0,1,43.06,91 L17.94,76.5 A8,8,0,0,1,11,64.5 L11,35.5 A8,8,0,0,1,17.94,23.5 Z" fill="url(#aqg1)"/>
+            <circle cx="50" cy="50" r="21" fill="none" stroke="white" stroke-width="4"/>
+            <circle cx="50" cy="50" r="4" fill="white"/>
+            <line x1="50" y1="50" x2="67" y2="67" stroke="white" stroke-width="4" stroke-linecap="round"/>
+          </svg></div>
+          <span class="orbit-label">Amazon Q</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  }
+
+  <!-- ═══ GRID VIEW ═══ -->
+  @if (!isOrbitMode) {
+  <div class="tech-wrapper">
+
+    <div class="tech-category">
+      <div class="tech-category-title">Languages</div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#"/></div>
+          <span class="tech-name">C#</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"/></div>
+          <span class="tech-name">TypeScript</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"/></div>
+          <span class="tech-name">JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-category">
+      <div class="tech-category-title">Backend</div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt=".NET Core"/></div>
+          <span class="tech-name">.NET Core</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/dotnet/512bd4" alt="ASP.NET"/></div>
+          <span class="tech-name">ASP.NET</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/dotnet/9061f9" alt="EF Core"/></div>
+          <span class="tech-name">Entity Framework</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/nuget/004880" alt="Dapper"/></div>
+          <span class="tech-name">Dapper</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg" alt="RabbitMQ"/></div>
+          <span class="tech-name">RabbitMQ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-category">
+      <div class="tech-category-title">Frontend</div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular"/></div>
+          <span class="tech-name">Angular</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"/></div>
+          <span class="tech-name">HTML5</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"/></div>
+          <span class="tech-name">CSS3</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"/></div>
+          <span class="tech-name">Bootstrap</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-category">
+      <div class="tech-category-title">Databases</div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" class="img-invert"/></div>
+          <span class="tech-name">SQL Server</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"/></div>
+          <span class="tech-name">PostgreSQL</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"/></div>
+          <span class="tech-name">MySQL</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis"/></div>
+          <span class="tech-name">Redis</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-category">
+      <div class="tech-category-title">Tools & DevOps</div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio"/></div>
+          <span class="tech-name">Visual Studio</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code"/></div>
+          <span class="tech-name">VS Code</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"/></div>
+          <span class="tech-name">Git</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="img-invert"/></div>
+          <span class="tech-name">GitHub</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"/></div>
+          <span class="tech-name">Azure</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman"/></div>
+          <span class="tech-name">Postman</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" alt="Swagger"/></div>
+          <span class="tech-name">Swagger</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="Jira"/></div>
+          <span class="tech-name">Jira</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-category">
+      <div class="tech-category-title">AI & Tooling</div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/githubcopilot/ffffff" alt="GitHub Copilot" class="copilot-icon"/></div>
+          <span class="tech-name">GitHub Copilot</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><img src="https://cdn.simpleicons.org/claude/d97757" alt="Claude"/></div>
+          <span class="tech-name">Claude</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-circle"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+            <defs><linearGradient id="aqg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#5B8EF5"/><stop offset="100%" style="stop-color:#9030F0"/></linearGradient></defs>
+            <path d="M43.06,9 A8,8,0,0,1,56.94,9 L82.06,23.5 A8,8,0,0,1,89,35.5 L89,64.5 A8,8,0,0,1,82.06,76.5 L56.94,91 A8,8,0,0,1,43.06,91 L17.94,76.5 A8,8,0,0,1,11,64.5 L11,35.5 A8,8,0,0,1,17.94,23.5 Z" fill="url(#aqg2)"/>
+            <circle cx="50" cy="50" r="21" fill="none" stroke="white" stroke-width="4"/>
+            <circle cx="50" cy="50" r="4" fill="white"/>
+            <line x1="50" y1="50" x2="67" y2="67" stroke="white" stroke-width="4" stroke-linecap="round"/>
+          </svg></div>
+          <span class="tech-name">Amazon Q</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  }
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-header">
+    <div>
+      <div class="section-tag">Work</div>
+      <h2>Featured Projects</h2>
+    </div>
+  </div>
+  <div class="projects-coming-soon">
+    <div class="coming-soon-icon">🚧</div>
+    <h3>Projects coming soon</h3>
+    <p>Currently working on some exciting projects. Check back later!</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrapper">
+    <div class="section-tag">Let's Connect</div>
+    <h2>Get In Touch</h2>
+    <div class="contact-info-cards">
+      <div class="contact-info-card">
+        <span class="contact-info-icon">✉️</span>
+        <span>vanahallipradeep4&#64;gmail.com</span>
+      </div>
+      <div class="contact-info-card">
+        <span class="contact-info-icon">📞</span>
+        <span>+91 84510-32642</span>
+      </div>
+      <div class="contact-info-card">
+        <a href="https://www.linkedin.com/in/pradeep-vanahalli-aa2a93203/" target="_blank" class="contact-linkedin-btn" title="LinkedIn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" width="32" height="32">
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form" (ngSubmit)="sendMessage(contactForm)" #contactForm="ngForm">
+      <div class="form-field">
+        <input type="text" class="form-input" placeholder="Your Name" [(ngModel)]="name" name="name" required #nameField="ngModel"
+          [class.input-error]="nameField.invalid && nameField.touched" />
+        @if (nameField.invalid && nameField.touched) {<span class="error-msg">Name is required.</span>}
+      </div>
+      <div class="form-field">
+        <input type="email" class="form-input" placeholder="Your Email" [(ngModel)]="email" name="email" required email #emailField="ngModel"
+          [class.input-error]="emailField.invalid && emailField.touched" />
+        @if (emailField.invalid && emailField.touched) {<span class="error-msg">
+          {{ emailField.errors?.['required'] ? 'Email is required.' : 'Enter a valid email.' }}
+        </span>}
+      </div>
+      <div class="form-field">
+        <textarea class="form-input form-textarea" placeholder="Your Message" [(ngModel)]="message" name="message" required #messageField="ngModel"
+          [class.input-error]="messageField.invalid && messageField.touched"></textarea>
+        @if (messageField.invalid && messageField.touched) {<span class="error-msg">Message is required.</span>}
+      </div>
+      <button type="submit" class="btn-primary form-submit">Send Message →</button>
+    </form>
+  </div>
+</section>
+<!-- BEYOND WORK -->
+<section id="beyond">
+  <div class="beyond-wrapper">
+    <div class="section-tag">Beyond Work</div>
+    <h2 class="beyond-title">Life Outside the Terminal</h2>
+    <p class="beyond-desc">When I'm not shipping code, you'll find me on the volleyball court or gearing up for the next road tour.</p>
+    <div class="beyond-cards">
+      <div class="beyond-card">
+        <div class="beyond-img-wrap">
+          <img src="Bike.jpeg" alt="Bike Touring" class="beyond-img beyond-img-bike" />
+        </div>
+        <div class="beyond-label">
+          <span class="beyond-icon">🏍</span>
+          <span>Bike Touring</span>
+        </div>
+      </div>
+      <div class="beyond-card">
+        <div class="beyond-img-wrap beyond-img-wrap-square">
+          <img src="Volleyball.png" alt="Volleyball" class="beyond-img" />
+        </div>
+        <div class="beyond-label">
+          <span class="beyond-icon">🏐</span>
+          <span>Volleyball</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2025 Pradeep Vanahalli. Built with Angular + Vercel.</div>
+  <div>Designed with ♥ in India</div>
+</footer>

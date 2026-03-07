@@ -1,0 +1,13 @@
+.contact-linkedin-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+section {
+    padding: 6rem 0rem;
+}
+
+.about-grid .about-grid-single
+{
+    max-width: 1000px !important;
+}
