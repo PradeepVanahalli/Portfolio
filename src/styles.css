@@ -227,6 +227,75 @@ nav ul a:hover { color: var(--accent); }
   -webkit-mask-image: radial-gradient(ellipse 88% 88% at 50% 48%, black 45%, transparent 100%);
   mask-image: radial-gradient(ellipse 88% 88% at 50% 48%, black 45%, transparent 100%);
   filter: brightness(0.88) contrast(1.05) saturate(0.9);
+  animation: 2s ease-in-out 0s infinite normal none running floatImage;
+  transition: transform 300ms;
+}
+
+@keyframes floatImage {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.hero-greeting-badge {
+  position: absolute;
+  bottom: 5%;
+  right: -20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0.75rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  animation: badgeSlideIn 0.6s ease-out 0.5s both, floatBadge 2s ease-in-out 1.2s infinite;
+}
+
+.hero-greeting-wave {
+  font-size: 2rem;
+  display: inline-block;
+  animation: waveHand 1.6s ease-in-out 1.2s 3;
+}
+
+.hero-greeting-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.hero-greeting-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.hero-greeting-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--heading);
+  line-height: 1;
+  font-family: 'Syne', sans-serif;
+}
+
+@keyframes badgeSlideIn {
+  from { opacity: 0; transform: rotate(350deg) translateY(16px); }
+  to   { opacity: 1; transform: rotate(350deg) translateY(0); }
+}
+
+@keyframes floatBadge {
+  0%   { transform: rotate(350deg) translateY(0); }
+  50%  { transform: rotate(350deg) translateY(-10px); }
+  100% { transform: rotate(350deg) translateY(0); }
+}
+
+@keyframes waveHand {
+  0%, 100% { transform: rotate(0deg); }
+  20%       { transform: rotate(20deg); }
+  40%       { transform: rotate(-10deg); }
+  60%       { transform: rotate(16deg); }
+  80%       { transform: rotate(-6deg); }
 }
 
 html.light-theme .hero-profile-img {
@@ -267,6 +336,21 @@ h1 {
 h1 .highlight {
   color: transparent;
   -webkit-text-stroke: 1.5px var(--accent);
+}
+
+.hero-cursor {
+  color: var(--accent);
+  font-weight: 300;
+  opacity: 1;
+}
+
+.hero-cursor--blink {
+  animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
 .hero-desc {
